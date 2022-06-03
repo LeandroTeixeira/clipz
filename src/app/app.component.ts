@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css', './custom.css'],
 })
 export default class AppComponent {
-  title = 'clips';
+  title = 'Clipz';
 
   getTitle() {
     return this.title;
