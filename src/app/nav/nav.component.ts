@@ -1,20 +1,24 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import ModalService from '../services/modal.service';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css'],
 })
-export default class NavComponent implements OnInit {
+export default class NavComponent {
   @Input() title: String;
 
-  constructor() {
+  constructor(public modal: ModalService) {
     this.title = 'Clips';
   }
 
-  ngOnInit(): void {}
-
   getTitle() {
     return this.title;
+  }
+
+  openModal($event: Event) {
+    $event.preventDefault();
+    this.modal.toggleVisible();
   }
 }
