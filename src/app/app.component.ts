@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export default class AppComponent {
   title = 'Clipz';
 
+  authID = 'auth';
+
   getTitle() {
     return this.title;
   }

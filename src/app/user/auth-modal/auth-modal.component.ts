@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import ModalService from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-auth-modal',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth-modal.component.css'],
 })
 export class AuthModalComponent implements OnInit {
-  constructor() {}
+  ids: string[] = [];
 
-  ngOnInit(): void {}
+  @Input() mainId: string;
+
+  constructor(public modal: ModalService) {
+    this.mainId = '';
+    this.ids.push('test');
+  }
+
+  ngOnInit(): void {
+    this.ids.push(this.mainId);
+    this.ids.forEach((id) => this.modal.register(id));
+  }
 }

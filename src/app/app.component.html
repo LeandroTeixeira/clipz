@@ -12,7 +12,7 @@
     <link href="./custom.css" rel="stylesheet" />
   </head>
   <body class="pb-8">
-    <app-nav [title]="getTitle()"></app-nav>
+    <app-nav [title]="getTitle()" [id]="authID"></app-nav>
     <!-- Intro Section -->
     <section class="relative overflow-hidden mb-2">
       <!-- The video -->
@@ -301,6 +301,6 @@
         </a>
       </div>
     </section>
-    <app-auth-modal></app-auth-modal>
+    <app-auth-modal [mainId]="authID"></app-auth-modal>
   </body>
 </html>

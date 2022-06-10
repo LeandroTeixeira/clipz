@@ -9,6 +9,8 @@ import ModalService from '../services/modal.service';
 export default class NavComponent {
   @Input() title: String;
 
+  @Input() id: any;
+
   constructor(public modal: ModalService) {
     this.title = 'Clips';
   }
@@ -19,6 +21,7 @@ export default class NavComponent {
 
   openModal($event: Event) {
     $event.preventDefault();
-    this.modal.toggleVisible();
+    console.log(`NAv id: ${this.id}`);
+    this.modal.toggleVisible(this.id);
   }
 }

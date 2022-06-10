@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import ModalService from 'src/app/services/modal.service';
 
 @Component({
@@ -7,11 +7,14 @@ import ModalService from 'src/app/services/modal.service';
   styleUrls: ['./modal.component.css'],
 })
 export default class ModalComponent {
+  @Input() id: string;
+
   constructor(public modal: ModalService) {
-    console.log(this.modal.getVisible());
+    this.id = '';
   }
 
   toggleModal() {
-    this.modal.toggleVisible();
+    console.log(`Modal ${this.id}`);
+    this.modal.toggleVisible(this.id);
   }
 }
