@@ -21,26 +21,19 @@ export default class ModalService {
     console.log(this.modal);
   }
 
-  public getVisible(id: any) {
-    console.log(`Get Visible : ${id}`);
-
-    const found = this.modal.filter((item: iModal) => item.id === id);
-    if (found[0]) {
-      console.log(`Get Visible : ${found[0].id}: ${found[0].value}`);
-      return found[0].value;
+  public getVisible(id: any): boolean {
+    const found = this.modal.find((item: iModal) => item.id === id);
+    if (found) {
+      return found.value;
     }
     return false;
   }
 
-  public toggleVisible(id: any) {
-    const index = this.modal.findIndex((item: iModal) => item.id === id);
-    if (index === -1) {
+  public toggleVisible(id: any): void {
+    const found = this.modal.find((item: iModal) => item.id === id);
+    if (found === undefined) {
       throw new Error('ID does not exist');
     }
-    this.modal[index].value = !this.modal[index].value;
-    console.log(
-      `Toggle Visble: ${this.modal[index].id}${this.modal[index].value}`
-    );
-    console.log(this.modal);
+    found.value = !found.value;
   }
 }

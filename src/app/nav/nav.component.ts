@@ -21,7 +21,6 @@ export default class NavComponent {
 
   openModal($event: Event) {
     $event.preventDefault();
-    console.log(`NAv id: ${this.id}`);
     this.modal.toggleVisible(this.id);
   }
 }

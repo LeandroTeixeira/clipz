@@ -14,7 +14,6 @@ export default class ModalComponent {
   }
 
   toggleModal() {
-    console.log(`Modal ${this.id}`);
     this.modal.toggleVisible(this.id);
   }
 }

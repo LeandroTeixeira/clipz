@@ -14,7 +14,6 @@ export class AuthModalComponent implements OnInit {
 
   constructor(public modal: ModalService) {
     this.mainId = '';
-    this.ids.push('test');
   }
 
   ngOnInit(): void {
