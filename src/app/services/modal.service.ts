@@ -21,6 +21,11 @@ export default class ModalService {
     console.log(this.modal);
   }
 
+  public unregister(id: string) {
+    this.modal = this.modal.filter((item: iModal) => item.id !== id);
+    console.log(this.modal);
+  }
+
   public getVisible(id: any): boolean {
     const found = this.modal.find((item: iModal) => item.id === id);
     if (found) {
